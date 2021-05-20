@@ -27,6 +27,7 @@
 import config as cf
 from App import model
 import csv
+import time
 
 """
 El controlador se encarga de mediar entre la vista y el modelo.
@@ -134,3 +135,9 @@ def servedRoutes(analyzer):
     """
     maxvert, maxdeg = model.servedRoutes(analyzer)
     return maxvert, maxdeg
+
+def getTime():
+    """
+    devuelve el instante tiempo de procesamiento en milisegundos
+    """
+    return float(time.perf_counter()*1000)

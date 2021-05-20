@@ -25,7 +25,9 @@
  """
 
 
+from os import times
 import sys
+from time import time
 import config
 import threading
 from App import controller
@@ -83,7 +85,11 @@ def optionThree(cont):
 
 
 def optionFour(cont, initialStation):
+    timeStart = controller.getTime()
     controller.minimumCostPaths(cont, initialStation)
+    timeEnd = controller.getTime()
+    deltaTime = timeEnd-timeStart
+    print(deltaTime)
 
 
 def optionFive(cont, destStation):
